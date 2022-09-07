@@ -1,0 +1,90 @@
+<!doctype html>
+<style>
+    body {
+        height: 100%;
+    }
+
+    .form-login {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+    .form-login {
+        margin-top: 80px;
+        font-weight: 400;
+    }
+
+    .form-login .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 16px;
+
+    }
+
+    .form-login .form-control:focus {
+        z-index: 2;
+    }
+
+    .form-login input[type="text"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .form-login input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    form a {
+        display: inline-block;
+        margin-top: 25px;
+        font-size: 12px;
+        line-height: 10px;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" href="data:;base64,=">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <title>登录</title>
+</head>
+<body>
+<div class="container">
+    <div class="col">
+        <form class="form-login" action="{% url "login" %}" method="post">
+            {% csrf_token %}
+            <h3 class="text-center">Login</h3>
+            <div class="form-group">
+                <label for="id_username">user name：</label>
+                <input type="text" name='username' class="form-control" id="id_username" placeholder="Username"
+                       autofocus required>
+            </div>
+            <div class="form-group">
+                <label for="id_password">password：</label>
+                <input type="password" name='password' class="form-control" id="id_password" placeholder="Password"
+                       required>
+            </div>
+            <div>
+                <a href="{% url "register" %}" class="text-success ">
+                    <ins>new enroll</ins>
+                </a>
+                <button type="submit" class="btn btn-primary float-right">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .helloTitle {
+        font-size: 70px;
+        color: #dddddd;
+    }
+
+    .styled-table {
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    h2 {
+        font-size: 50px;
+        color: #000000;
+    }
+
+    .styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 15px;
+    }
+
+    .styled-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    .styled-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+
+    .styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Backend</title>
+    <link rel="icon" href="data:;base64,=">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<h1 class="helloTitle">Hello,Normal User {{ user.username }}</h1>
+<div class="float-right text-center" style="width: 10%"><span><h3 style="background: greenyellow"><a href="/logout">Log Out</a></h3></span>
+</div>
+<h2>Your Information:</h2>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Your Username</th>
+            <th>Your Password(sha256)</th>
+            <th>Your Join Date</th>
+            <th>Is Active</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="active-row">
+            <td>{{ user.username }}</td>
+            <td>{{ user.password }}</td>
+            <td>{{ user.date_joined }}</td>
+            <td>{{ user.is_active }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{#<button class="btn btn-primary enterProfileBtn" onclick="window.location.href='/all_users_profile'">View All User's Profile(Admin Only)</button>#}
+
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

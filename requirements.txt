@@ -1,0 +1,3 @@
+Django
+casbin-django-orm-adapter
+django_authorization
